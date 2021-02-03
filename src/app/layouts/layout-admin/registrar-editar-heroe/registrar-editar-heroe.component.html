@@ -1,0 +1,43 @@
+<form class="container" [formGroup]="formulario" (ngSubmit)="guardar()">
+    <h2 class="text-center mt-3 mb-4">{{operacion}} HEROE</h2>
+    <div class="form-floating mb-3">
+        <input [class.is-invalid]="campoNoValido('nombre')" formControlName="nombre" type="text" class="form-control campo" placeholder="Nombre del heroe">
+        <small *ngIf="campoNoValido('nombre')" class="text-danger">Ingrese al menos 3 caracteres</small>
+    </div>
+    <div class="row mt-4">
+        <div class="mb-3 col-12 col-md-6">
+            <input [class.is-invalid]="campoNoValido('aparicion')" formControlName="aparicion" type="date" class="form-control campo" placeholder="1940-06-01">
+            <small *ngIf="campoNoValido('aparicion')" class="text-danger">Seleccione una fecha</small>
+        </div>
+        <div class="mb-3 col-12 col-md-6">
+            <input [class.is-invalid]="campoNoValido('casa')" formControlName="casa" type="text" class="form-control campo" placeholder="Casa a la que pertenece">
+            <small *ngIf="campoNoValido('casa')" class="text-danger">Ingrese al menos 2 caracteres</small>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="mb-3 col-12 col-md-9">
+            <div class="mb-4">
+                <label for="formFileLg" class="form-label">Imagen del heroe</label>
+                <input [class.is-invalid]="campoNoValido('img')" formControlName="img" (change)="seleccionArchivo($event.target.files[0])" accept=".jpg, .png,.jpeg" class="form-control campo form-control-lg" id="formFileLg" type="file">
+                <small *ngIf="campoNoValido('img')" class="text-danger">Seleccione una imagen</small>
+            </div>
+        </div>
+        <div class="mb-3 col-12 col-md-3">
+            <img class="img-thumbnail w-75" [src]="imgSeleccionada" alt="imagen seleccionada">
+        </div>
+    </div>
+    <div class="mb-4">
+        <label for="descripcion">Descripción</label>
+        <textarea [class.is-invalid]="campoNoValido('descripcion')" formControlName="descripcion" class="form-control" placeholder="Su principal poder es su capacidad de aumentar su fuerza hasta niveles prácticamente ilimitados" id="descripcion"></textarea>
+        <small *ngIf="campoNoValido('descripcion')" class="text-danger">Ingrese al menos 10 caracteres</small>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 col-md-6 mb-4">
+            <button *ngIf="operacion === 'REGISTRAR'" type="submit" class="btn btn-outline-primary btn-block">Registrar</button>
+            <button *ngIf="operacion === 'EDITAR'" type="submit" class="btn btn-outline-primary btn-block">Actualizar</button>
+        </div>
+        <div class="col-12 col-md-6 mb-4">
+            <button routerLink="/admin/heroes" class="btn btn-outline-danger btn-block">Cancelar</button>
+        </div>
+    </div>
+</form>

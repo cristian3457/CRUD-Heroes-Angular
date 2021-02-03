@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" style="cursor: pointer;" routerLink="/admin/home">
+            <img src="assets/images/A-64.png" alt="logo" width="30" height="30" class="d-inline-block align-top"> CRUD Heroes
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="margin-left: 100px;">
+                <li class="nav-item ml-md-md-5" routerLinkActive="active">
+                    <a class="nav-link" aria-current="page" routerLink="/admin/home" style="cursor: pointer;">Home</a>
+                </li>
+                <li class="nav-item ml-md-4" routerLinkActive="active">
+                    <a class="nav-link" aria-current="page" routerLink="/admin/heroes" style="cursor: pointer;">Heroes</a>
+                </li>
+                <li class="nav-item ml-md-4" routerLinkActive="active">
+                    <a class="nav-link" aria-current="page" routerLink="/admin/registrarHeroe" style="cursor: pointer;">Registrar Heroe</a>
+                </li>
+                <!-- <li class="nav-item ml-md-4" routerLinkActive="active">
+                    <a class="nav-link" aria-current="page" routerLink="/admin/editarHeroe/editar" style="cursor: pointer;">Editar Heroe</a>
+                </li> -->
+                <li class="nav-item d-sm-none d-md-block ml-md-4">
+                    <button (click)="logout()" class="btn btn-outline-danger">Logout</button>
+                </li>
+
+
+            </ul>
+
+        </div>
+    </div>
+</nav>

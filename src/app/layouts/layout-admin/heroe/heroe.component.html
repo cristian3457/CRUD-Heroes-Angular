@@ -1,0 +1,18 @@
+<div *ngIf="heroe['img']">
+    <h1 class="text-center">{{heroe['nombre'] | uppercase}} <small>({{heroe['aparicion'].split('T')[0] | date}})</small>
+    </h1>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <img [src]="heroe['img'] | noImage" [alt]="heroe['nombre']" width="100%">
+            <br><br>
+            <a class="btn btn-outline-danger btn-block" routerLink="/admin/heroes" style="width: 100% !important;">Regresar</a>
+        </div>
+        <div class="col-8">
+            <h3>{{heroe['nombre']}}</h3>
+            <hr>
+            <p class="text-justify">{{heroe['descripcion']}}</p>
+            <p>Casa a la que pertenece: <strong>{{heroe['casa']}}</strong></p>
+        </div>
+    </div>
+</div>

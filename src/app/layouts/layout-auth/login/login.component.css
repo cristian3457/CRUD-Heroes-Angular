@@ -1,0 +1,25 @@
+.contenedor {
+    width: 32%;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 10px;
+    margin: auto;
+    box-shadow: 2px 5px 5px gray;
+    margin-top: 10rem;
+}
+
+.campo {
+    height: 50px;
+}
+
+.centrar {
+    text-align: center;
+}
+
+.izquierda {
+    text-align: left;
+}
+
+.derecha {
+    text-align: right;
+}

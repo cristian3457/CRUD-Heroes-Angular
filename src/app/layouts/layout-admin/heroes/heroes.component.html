@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let heroe of heroes">
+        <div class="card">
+            <img [src]="heroe.img | noImage " class="card-img-top" [alt]="heroe.nombre">
+            <p></p>
+            <div class="card-body">
+                <h5 class="card-title">{{heroe.nombre}}</h5>
+                <p class="card-text text-justify">{{heroe.descripcion | slice:0:70}} ....</p>
+                <div class="row">
+                    <div class="col">
+                        <button (click)="detalles(heroe['_id'])" class="btn btn-outline-success btn-block"><i class="fa fa-info"></i></button>
+                    </div>
+                    <div class="col">
+                        <button (click)="editar(heroe['_id'])" class="btn btn-outline-primary btn-block"><i class="fa fa-edit"></i></button>
+                    </div>
+                    <div class="col">
+                        <button (click)="eliminar(heroe['_id'],heroe.nombre)" class="btn btn-outline-danger btn-block"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

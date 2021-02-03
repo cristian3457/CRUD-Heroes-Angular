@@ -1,0 +1,36 @@
+<form [formGroup]="formulario" (ngSubmit)="registrarUsuario()">
+    <div class="row contenedor">
+        <h4 class="mt-3 mb-3" style="margin: auto;">Crear nueva cuenta</h4>
+        <div class="col-12 mb-3">
+            <input [class.is-invalid]="nombreNoValido" type="text" formControlName="nombre" class="form-control campo" id="txtNombre" placeholder="Nombre y apellidos">
+            <small *ngIf="nombreNoValido" class="text-danger">Ingrese al menos 5 caracteres</small>
+        </div>
+        <div class="col-12 mb-3">
+            <input [class.is-invalid]="emailNoValido" formControlName="email" type="email" class="form-control campo" id="txtEmail" placeholder="mail@mail.com">
+            <small *ngIf="emailNoValido" class="text-danger">Ingrese al menos 5 caracteres y un formato de correo valido</small>
+        </div>
+        <div class="col-12 mb-3">
+            <input [class.is-invalid]="passwordNoValido" formControlName="password" type="password" class="form-control campo" id="txtPassword" placeholder="Password">
+            <small *ngIf="passwordNoValido" class="text-danger">Ingrese al menos 8 caracteres</small>
+        </div>
+        <div class="col-12 mb-3">
+            <input [class.is-invalid]="repPass2LongitudNoValido || repPass2LongitudNoValido == false && repPasswordNoValido" formControlName="repPassword" type="password" class="form-control campo" id="txtRepPassword" placeholder="Repetir Password">
+            <small *ngIf="repPass2LongitudNoValido" class="text-danger">Ingrese al menos 8 caracteres</small>
+            <small *ngIf="repPass2LongitudNoValido == false && repPasswordNoValido" class="text-danger">Las contraseñas ingresadas no coinciden, verifica tus datos</small>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-check">
+                <input formControlName="recordar" class="form-check-input" type="checkbox" id="recordarUsuario">
+                <label class="form-check-label" for="recordarUsuario">
+                            Recordar mi usuario
+                        </label>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <a routerLink="/auth/login">
+                    ¿Ya tienes cuenta? / Ingresar
+                    </a>
+        </div>
+        <button class="btn btn-outline-primary btn-block mt-4 mb-4 campo" type="submit">Crear cuenta</button>
+    </div>
+</form>
