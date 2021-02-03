@@ -7,8 +7,8 @@ export const environment = {
 };
 
 
-// export const URL_SERVICIOS = "https://api-crud-heroes.herokuapp.com/";
-// export const URL_ARCHIVOS = "https://api-crud-heroes.herokuapp.com/uploads/";
-export const URL_SERVICIOS = "http://localhost:3000/";
-export const URL_ARCHIVOS = "http://localhost:3000/uploads/";
+export const URL_SERVICIOS = "https://api-crud-heroes.herokuapp.com/";
+export const URL_ARCHIVOS = "https://api-crud-heroes.herokuapp.com/uploads/";
+// export const URL_SERVICIOS = "http://localhost:3000/";
+// export const URL_ARCHIVOS = "http://localhost:3000/uploads/";
 
